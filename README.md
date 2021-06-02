@@ -34,3 +34,12 @@ MySQL è proprietà Oracle e Oracle non vuole che MySQL venga utilizzato, perci�
 Bazzecole.
 #### COME LE PROVO LE API?
 Con un po' di miele, scherzo, mentre scrivevo sto codice mi sono fatto una collezione con Postman, non so come si importa, ma il file è `prova.postman_collection.json`.
+#### Ma che fa sto programma???
+Il programma implementa un web service che provvede a fornire operazioni CRUD su un dizionario:
++ `GET /dict/` è una `getMany()`, insomma ti restituisce cosa c'è nel dizionario, se ti urta la mancanza di paginazione, falla te così impari.
++ `GET /dict/:key` è una blandissima `get(key)`, dove `key` è la chiave dell'elemento.
++ `PUT /dict/:key` è un blandissimo `put(key, value)`, dove il `body` può essere un `application/json` o `text/plain`
++ `PATCH /dict/:key` per pigrizia è esattamente come `PUT /dictionary/:key`
++ `DELETE /dict/:key` cancella l'elemento di chiave `key` dal dizionario.
+
+
