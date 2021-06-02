@@ -4,35 +4,35 @@ import { Entry } from "./dictionary.type";
 
 class Controller {
 
+    /**
+     * @description Adatta value di entry a seconda del tipo
+     */
+    private _adapt( entry: Entry ): Entry {
+        return {
+            ...entry, 
+            value: entry.type == 'json' ?  JSON.parse(entry.value as any) : entry.value
+        };
+    }
+
     constructor( ) {}
 
     getMany( ) {
-        return db.query<Entry[]>(`SELECT * FROM dictionary`).then(
-            ([result]) => result.map( el => el.type == 'json' ? {...el, value: JSON.parse(el.value as any)}: el )
+        return db.array<Entry>(`SELECT * FROM dictionary`).then(
+            result => result.map( this._adapt.bind( this ) )
         );
     }
 
     get( key: string ): Promise<Entry> {
-        return db.query<Entry[]>(`
+        return db.get<Entry>(`
             SELECT * FROM dictionary
             WHERE \`key\` = ${ escape(key) }
-        `).then( ([[res]]) => ({
-            ...res, 
-            value: res.type == 'json' ?  JSON.parse(res.value as any) : res.value
-        }));
+        `).then( this._adapt.bind( this ) );
     }
 
     put( key: string, _value: object|string ) {
-        let type: 'json'|'text';
+        const type: 'json'|'text' = ( typeof(_value) == 'object') ? 'json' : 'text';
+        const value = type == 'json' ? JSON.stringify(_value) : _value;
 
-        if ( typeof(_value) == 'object' ) {
-            type = 'json';
-        }
-        else {
-            type = "text";
-        };
-
-        let value = type == 'json' ? JSON.stringify(_value) : _value;
         return db.query(`
                 REPLACE INTO dictionary SET ?
             `, {key, type, value }

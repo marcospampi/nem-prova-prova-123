@@ -30,22 +30,22 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "un testo qualsiasi",
+					"raw": "{\n  \"stand\": \"Star Platinum\"\n}",
 					"options": {
 						"raw": {
-							"language": "text"
+							"language": "json"
 						}
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/dict/maria",
+					"raw": "localhost:8080/dict/jotaro-kujo",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"dict",
-						"maria"
+						"jotaro-kujo"
 					]
 				}
 			},
@@ -58,7 +58,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"key\":\"sticchio\"}",
+					"raw": "{\"key\":\"value\"}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -121,6 +121,34 @@
 					"path": [
 						"dict",
 						"maria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put ( text )",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Magician's Red",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/dict/abdul",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dict",
+						"abdul"
 					]
 				}
 			},
