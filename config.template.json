@@ -1,0 +1,6 @@
+{
+    "user": "username",
+    "password": "password",
+    "connectionLimit": 4,
+    "database": "test"
+}

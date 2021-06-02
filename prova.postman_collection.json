@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "71f33da1-48f7-4adf-bc30-b7817b2dc9cd",
+		"name": "prova",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getMany",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/dict",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dict"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "un testo qualsiasi",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/dict/maria",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dict",
+						"maria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "patch",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"key\":\"sticchio\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/dict/supermario",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dict",
+						"supermario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"key\":\"value\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/dict/maria",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dict",
+						"maria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/dict/maria",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dict",
+						"maria"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
