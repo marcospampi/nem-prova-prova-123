@@ -7,7 +7,7 @@ Assicurati di non avere nessuna installazione Windows nel proprio computer, nel 
 ### 1) Configura il database:
 Facile facile, piglia la bash e scrivi:
 ```sh
-mysql -u <nome> -p test.sql
+mysql -u <nome> -p < test.sql
 ```
 insomma, il file `test.sql` lo puoi leggere da te e se sai un minimo di database e sql non hai problemi a comprendere.
 
