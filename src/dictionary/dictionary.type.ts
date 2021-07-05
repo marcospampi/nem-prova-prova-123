@@ -1,5 +1,4 @@
 export interface Entry {
-    key: string;
-    type: 'json'|'text';
+    _id: string;
     value: string|object;
 }

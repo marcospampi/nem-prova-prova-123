@@ -4,7 +4,7 @@ import Controller from "./controller";
 export const myRoute = express.Router();
 
 myRoute.get('/', (req,res ) => {
-    Controller.getMany().then(
+    Controller.getMany( req.query ).then(
         _res => res.send(_res)
     );
 });

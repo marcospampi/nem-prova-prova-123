@@ -1,5 +1,4 @@
 import express from 'express';
-import { db } from "./database";
 
 import { myRoute } from "./dictionary/view"
 export function main( ): void {
